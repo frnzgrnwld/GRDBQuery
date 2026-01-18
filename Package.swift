@@ -19,21 +19,20 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/groue/GRDB.swift", from: "7.0.0"),
-    ],
-    targets: [
+        .package(url: "https://github.com/frnzgrnwld/GRDBCustom", from: "7.9.0"),],
+   targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "GRDBQuery",
             dependencies: [
-                .product(name: "GRDB", package: "GRDB.swift"),
+                .product(name: "GRDB", package: "GRDBCustom"),  // Geändert von "GRDB.swift" zu "GRDBCustom"
             ]),
         .testTarget(
             name: "GRDBQueryTests",
             dependencies: [
                 "GRDBQuery",
-                .product(name: "GRDB", package: "GRDB.swift"),
+                .product(name: "GRDB", package: "GRDBCustom"),  // Geändert von "GRDB.swift" zu "GRDBCustom"
             ]),
     ]
 )
